@@ -1,0 +1,40 @@
+.trash_logo, .add_logo {
+    position: center;
+    width: 18px;
+}
+
+.lock_logo {
+    width: 30px;
+}
+
+
+.trash_logo:hover, .add_logo:hover {
+    transform: scale(1.2);
+}
+
+/* Tooltip container */
+.lock_logo {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.lock_logo .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.lock_logo:hover .tooltiptext {
+    visibility: visible;
+}

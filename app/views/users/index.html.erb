@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<%= render "shared/head" %>
+<body>
+
+<!-- Navbar -->
+<%= render "shared/navbar" %>
+
+<!-- Sidebar-->
+<%= render "shared/sidebar" %>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main " style="margin-left:250px">
+
+  <% unless (defined?(@newuser)).nil? %>
+    <h3> User created </h3>
+    <% end %>
+
+
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <div class="w3-responsive">
+        <table class="w3-table  w3-striped w3-border">
+          <tr class="w3-green">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <%= form_with do |form| %>
+              <td> <%= form.text_field :firstname, :required => true %></td>
+              <td> <%= form.text_field :lastname, :required => true %></td>
+              <td> <%= form.email_field :email, :required => true %></td>
+
+            <td><%= button_to image_tag("logos/add.png", :class => "add_logo"),
+                              {action: "new"},
+                              method: :post,
+                              form: {data: {turbo_confirm: "Confirm creation of user ? " }} %> </td>
+            <% end %>
+          </tr>
+          <% @users.each do |user| %>
+
+            <tr>
+              <td><%= user.firstname %></td>
+              <td><%= user.lastname %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= if Author.exists? user_id: user.id
+                       image_tag("logos/locktest.png", :class => "lock_logo")
+                    else
+                        button_to image_tag("logos/delete.png", :class => "trash_logo"),
+                                {action: "new",  id: user.id },
+                                method: :post,
+                                form: {data: {turbo_confirm: "Are you sure you want to delete the user #{user.firstname} #{user.lastname} ?" }}
+                      end %>
+
+              </td>
+            </tr>
+          <% end%>
+
+
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

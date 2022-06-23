@@ -104,6 +104,8 @@
     <orderEntry type="library" name="w3" level="application" />
     <orderEntry type="library" name="w3-theme-black" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="w3-theme-blue" level="application" />
+    <orderEntry type="library" name="w3-theme-indigo" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
