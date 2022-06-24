@@ -7,6 +7,13 @@
   <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+
+  <% if user_signed_in? %>
+  <br>
+  <h4 class="w3-bar-item"><b>Admin</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/users">Users</a>
+  <% end %>
+
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->

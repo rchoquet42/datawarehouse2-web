@@ -24,3 +24,7 @@ html,body,h1,h2,h3,h4,h5,h6 {
     bottom: 0;
     height: inherit;
 }
+
+.zindexclass {
+    z-index: 10;
+}

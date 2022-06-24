@@ -1,0 +1,7 @@
+<% if !object.nil? and object.errors.any? %>
+  <ul class="w3-red">
+    <% object.errors.full_messages.each do |message| %>
+      <li ><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

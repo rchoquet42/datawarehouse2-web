@@ -5,8 +5,18 @@
     <a href="/about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
     <a href="/authors" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Authors</a>
     <a href="/teaching" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Teaching Material</a>
-    <a href="/users" class="w3-bar-item w3-button w3-hide-small w3-hover-white">users</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">define</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">define</a>
+
+    <% if user_signed_in? %>
+      <a href="/account" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">My account</a>
+      <%= link_to "Sign Out",
+                     {controller: "sessions", action: "destroy"},
+                     method: :delete,
+                     data: { "turbo-method": :delete },
+                     class: "w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right" %>
+     <% else %>
+      <a href="/login" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Login</a>
+    <% end %>
   </div>
 </div>

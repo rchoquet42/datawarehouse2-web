@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%= render "shared/head" %>
+<body>
+
+<!-- Navbar -->
+<%= render "shared/navbar" %>
+
+
+<!-- Sidebar  -->
+<%= render "shared/sidebar" %>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+
+<div class="w3-main" style="margin-left:250px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-theme">Personal information's</h1>
+
+<%= form_with model: @user, url: account_path, method: :put do |form| %>
+  <%= render partial: "shared/form_errors", locals: { object: form.object } %>
+        <div>
+          <%= form.label :firstname %>
+          <%= form.text_field :firstname, :value => @user.firstname   %>
+        </div>
+        <div>
+          <%= form.label :lastname %>
+          <%= form.text_field :lastname, :value => @user.lastname  %>
+        </div>
+        <div>
+          <%= form.label :email, "Current Email" %>
+          <%= form.email_field :email, disabled: true %>
+        </div>
+        <div>
+          <%= form.label :unconfirmed_email, "New Email" %>
+          <%= form.text_field :unconfirmed_email %>
+        </div>
+        <div>
+          <%= form.label :password, "Password (leave blank if you don't want to change it)" %>
+          <%= form.password_field :password %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation %>
+        </div>
+        <hr/>
+        <div>
+          <%= form.label :current_password, "Current password (we need your current password to confirm your changes)" %>
+          <%= form.password_field :current_password, required: true %>
+        </div>
+  <%= form.submit "Update Account" %>
+<% end %>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

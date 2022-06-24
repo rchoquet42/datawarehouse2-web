@@ -37,6 +37,7 @@
             <td><%= button_to image_tag("logos/add.png", :class => "add_logo"),
                               {action: "new"},
                               method: :post,
+                              params: {admin: true}, #TODO à changer quand les sessions admin existerons
                               form: {data: {turbo_confirm: "Confirm creation of user ? " }} %> </td>
             <% end %>
           </tr>
@@ -48,11 +49,11 @@
               <td><%= user.email %></td>
               <td>
                 <%= if Author.exists? user_id: user.id
-                       image_tag("logos/locktest.png", :class => "lock_logo")
+                       image_tag("logos/locktest.png", :class => "lock_logo", :title => "Can't delete an Author")
                     else
-                        button_to image_tag("logos/delete.png", :class => "trash_logo"),
-                                {action: "new",  id: user.id },
-                                method: :post,
+                        button_to image_tag("logos/delete.png", :class => "trash_logo", :title => "Delete user"),
+                                {action: "delete",  id: user.id },
+                                method: :delete,
                                 form: {data: {turbo_confirm: "Are you sure you want to delete the user #{user.firstname} #{user.lastname} ?" }}
                       end %>
 

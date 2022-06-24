@@ -28,6 +28,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="w3" level="application" />
+    <orderEntry type="library" name="w3-theme-black" level="application" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="w3-theme-blue" level="application" />
+    <orderEntry type="library" name="w3-theme-indigo" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v7.0.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v7.0.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v7.0.3, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -40,6 +45,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v7.0.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.0, RVM: ruby-3.0.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.18, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.12.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -101,11 +107,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.0, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" name="w3" level="application" />
-    <orderEntry type="library" name="w3-theme-black" level="application" />
-    <orderEntry type="library" name="font-awesome" level="application" />
-    <orderEntry type="library" name="w3-theme-blue" level="application" />
-    <orderEntry type="library" name="w3-theme-indigo" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
