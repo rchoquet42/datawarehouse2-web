@@ -1,0 +1,11 @@
+<%= form_with method: :put  do |form| %>
+  <div>
+    <%= form.label :job, "What's your position ? " %>
+    <%= form.text_field :job, required: true, :value => "teacher, etc .." %>
+  </div>
+  <div>
+    <%= form.label :why, "Why do you want to access the Datawarehouse teaching material ? " %>
+    <%= form.text_area :why, required: true %>
+  </div>
+  <%= form.submit "Request access" %>
+<% end %>

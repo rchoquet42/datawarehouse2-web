@@ -1,0 +1,2 @@
+module TeachingRequestsHelper
+end
