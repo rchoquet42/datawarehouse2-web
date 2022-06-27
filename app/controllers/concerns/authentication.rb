@@ -8,6 +8,7 @@ module Authentication
     before_action :current_user
     helper_method :current_user
     helper_method :user_signed_in?
+    helper_method :admin_user?
   end
 
   def forget(user)
@@ -38,15 +39,19 @@ module Authentication
     redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
   end
 
-  def admin_user! #TODO pour creer les users admin !
+  def admin_user!
     store_location
     redirect_to login_path, alert: "You need to be ADMIN to access that page." unless admin_user?
   end
 
   def admin_user?
-    current_user_role = Users_role.find_by user_id: current_user.id
-    if user_signed_in? and  current_user_role.role_id == ADMIN
-      return true
+    if user_signed_in?
+      user_role = UsersRole.find_by user_id: current_user.id
+      unless user_role.nil?
+        if user_role.role_id == ADMIN
+          return true
+        end
+      end
     end
     return false
   end

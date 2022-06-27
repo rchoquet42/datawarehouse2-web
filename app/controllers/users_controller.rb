@@ -44,8 +44,7 @@ class UsersController < ApplicationController
 
 
   def new
-    puts params
-    if params[:admin] #TODO ACHANGER POUR UN TEST SUR LE ROLE ADMIN AU LIEU DE PASSER UN PARAMETRE
+    if admin_user?
       new_from_admin
     else
       @user = User.new
@@ -71,12 +70,9 @@ class UsersController < ApplicationController
   private
 
   def new_from_admin
-    puts "new for admin"
-    puts params
     if User.exists? email: params[:email]
       redirect_to action: :index
     else
-      puts "dans user.new ! "
       newuser = User.new firstname: params[:firstname],
                          lastname: params[:lastname],
                          email: params[:email],
@@ -86,8 +82,7 @@ class UsersController < ApplicationController
                          confirmed_at: DateTime.now #todo creer un bouton confirm si pas d'émail reçu
 
       newuser.save
-      redirect_to action: :index
-
+      redirect_to action: :index and return
     end
   end
 

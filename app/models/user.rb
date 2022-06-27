@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :users_roles
+  has_one :users_role
 
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes

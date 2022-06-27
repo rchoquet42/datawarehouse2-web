@@ -1,4 +1,25 @@
-<%= form_with model: @user, url: confirmations_path do |form| %>
-  <%= form.email_field :email, required: true %>
-  <%= form.submit "Confirm Email" %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<%= render "shared/head" %>
+<body>
+
+<!-- Navbar -->
+<%= render "shared/navbar" %>
+
+<!-- Sidebar-->
+<%= render "shared/sidebar" %>
+<div class="w3-main " style="margin-left:250px">
+  <div class="w3-row w3-padding-64">
+    <h3>Resend confirmation email</h3>
+    <%= form_with model: @user, url: confirmations_path do |form| %>
+      <%= form.email_field :email, required: true %>
+      <%= form.submit "Confirm Email" %>
+    <% end %>
+
+    <p>The confirmation email may take some time, or it may be in your spam folder.<br>But if you really haven't received it, contact us at  <a href="mailto:webmaster@cs.ulb.ac.be">webmaster@cs.ulb.ac.be</a></p>
+
+  </div>
+</div>
+
+</body>
+</html>

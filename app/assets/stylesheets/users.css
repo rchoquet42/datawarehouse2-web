@@ -1,11 +1,24 @@
-.trash_logo, .add_logo {
+.trash_logo, .add_logo, .clock_logo, .check_logo, .lock_logo{
     position: center;
     width: 18px;
 }
 
-.lock_logo {
-    width: 30px;
+
+#userindextable .button_to {
+    float: left;
+    padding: 2px;
 }
+
+.validated {
+   background-color: #93ff97;
+}
+
+.waiting_validation {
+    background-color: #ff752a;
+}
+
+
+
 
 
 .trash_logo:hover, .add_logo:hover {

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "sign_up", to: "users#new"
 
   resources :confirmations, only: [:create, :edit, :new], param: :confirmation_token
+  put "force_edit", to: "confirmations#force_edit"
 
 
   post "login", to: "sessions#create"
