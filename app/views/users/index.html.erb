@@ -47,7 +47,7 @@
               <td><%= user.email %></td>
               <td>
                 <%= if Author.exists? user_id: user.id
-                      button_to image_tag("logos/lock.png", :class => "lock_logo", :title => "Can't delete an Author")
+                      button_to image_tag("logos/lock.png", :class => "lock_logo", :title => "Can't delete an Author"), {}, :disabled => true
                     else
                         button_to image_tag("logos/delete.png", :class => "trash_logo", :title => "Delete user"),
                                 {action: "delete",  id: user.id },
@@ -64,7 +64,7 @@
                                 form: {data: {turbo_confirm: "Are you sure you want to validate the user \"#{user.firstname} #{user.lastname}\" ?" }}
 
                     else
-                      button_to image_tag("logos/check.png", :class => "check_logo", :title => "Already validated")
+                      button_to image_tag("logos/check.png", :class => "check_logo", :title => "Already validated"), {}, :disabled => true
                     end %>
               </td>
             </tr>
