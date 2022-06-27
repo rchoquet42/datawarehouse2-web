@@ -73,11 +73,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'cs.ulb.ac.be',
+    address:              Rails.application.credentials.smtp_settings[:address],
     port:                 587,
-    domain:               'cs.ulb.ac.be',
-    user_name:            'it4bidc',
-    password:             'Ul8-it4b!',
+    domain:               Rails.application.credentials.smtp_settings[:domain],
+    user_name:            Rails.application.credentials.smtp_settings[:user_name],
+    password:             Rails.application.credentials.smtp_settings[:password],
     authentication:       'plain',
     enable_starttls_auto: true,
     open_timeout:         30,
