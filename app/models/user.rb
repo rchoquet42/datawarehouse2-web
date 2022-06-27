@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_one :users_roles
+
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
   MAILER_FROM_EMAIL = "no-reply@datawarehouse2.com"

@@ -1,5 +1,8 @@
 module Authentication
   extend ActiveSupport::Concern
+  ADMIN = 1
+  MODERATOR = 2
+
 
   included do
     before_action :current_user
@@ -36,7 +39,16 @@ module Authentication
   end
 
   def admin_user! #TODO pour creer les users admin !
-    authenticate_user!
+    store_location
+    redirect_to login_path, alert: "You need to be ADMIN to access that page." unless admin_user?
+  end
+
+  def admin_user?
+    current_user_role = Users_role.find_by user_id: current_user.id
+    if user_signed_in? and  current_user_role.role_id == ADMIN
+      return true
+    end
+    return false
   end
 
 

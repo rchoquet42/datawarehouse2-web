@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_095611) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_27_081453) do
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
     t.text "about"
@@ -19,6 +19,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_095611) do
     t.datetime "updated_at", null: false
     t.string "picture_path"
     t.index ["user_id"], name: "index_authors_on_user_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.text "role_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,6 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_095611) do
     t.string "unconfirmed_email"
     t.string "remember_token"
     t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
+  end
+
+  create_table "users_roles", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_users_roles_on_role_id"
+    t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
   add_foreign_key "authors", "users"
