@@ -5,7 +5,6 @@ class CreateTeachingRequests < ActiveRecord::Migration[7.0]
       t.text :job
       t.text :why
 
-
       t.timestamps
     end
   end

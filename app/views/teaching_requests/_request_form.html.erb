@@ -1,4 +1,4 @@
-<%= form_with method: :put  do |form| %>
+<%= form_with method: :put, url: "/teaching_request"  do |form| %>
   <div>
     <%= form.label :job, "What's your position ? " %>
     <%= form.text_field :job, required: true, :value => "teacher, etc .." %>

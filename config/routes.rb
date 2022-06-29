@@ -24,7 +24,9 @@ Rails.application.routes.draw do
   delete "account", to: "users#destroy"
 
 
-  post "request_teaching", to: "teaching_requests#create"
+  put "teaching_request", to: "teaching_requests#create"
+  get "teaching_requests", to: "teaching_requests#index"
+  post "teaching_requests", to: "teaching_requests#edit"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
