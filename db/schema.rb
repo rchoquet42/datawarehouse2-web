@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_29_121855) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_12_131018) do
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
     t.text "about"
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_121855) do
     t.datetime "updated_at", null: false
     t.string "picture_path"
     t.index ["user_id"], name: "index_authors_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "review"
+    t.integer "note"
+    t.string "reviewer_details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|

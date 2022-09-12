@@ -15,16 +15,20 @@ class TeachingRequestsController < ApplicationController
   end
 
   def index
-    @requests = TeachingRequest.all.order(created_at: :desc)
+    @requests_pending = TeachingRequest.where(waiting?: true)
+    @requests_accepted = TeachingRequest.where(waiting?: false, validated?: true)
+    @requests_rejected = TeachingRequest.where(waiting?: false, validated?: false)
   end
 
   def edit
     request = TeachingRequest.find_by id: params[:req]
-    puts request
     if params[:validated?] == "true"
       request.update(:validated? => true)
     else
       request.update(:validated? => false)
+    end
+    if request.waiting? #Send email only the first time
+      request.send_validation_email!
     end
     request.update(:waiting? => false)
     request.save

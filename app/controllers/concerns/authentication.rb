@@ -36,11 +36,26 @@ module Authentication
     redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
   end
 
-
+  def access_teaching!
+    store_location
+    redirect_to login_path, alert: "You need to login to access that page." unless access_teaching?
+  end
 
 
 
   private
+
+
+  def access_teaching?
+    teachingrequest = TeachingRequest.find_by user_id: current_user.id
+    unless teachingrequest.nil?
+      return teachingrequest.validated?
+    end
+    if admin_user?
+      return true
+    end
+    false
+  end
 
   def current_user
     Current.user ||= if session[:current_user_id].present?

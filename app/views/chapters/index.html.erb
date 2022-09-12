@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%= render "shared/head" %>
+<body>
+
+<!-- Navbar -->
+<%= render "shared/navbar" %>
+
+<!-- Sidebar-->
+<%= render "shared/sidebar" %>
+
+
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main " style="margin-left:250px">
+  <div class="w3-row w3-padding-64">
+    <h1>ADMIN</h1>
+    <p>TO change to chapters, edit the files located at "<%= Rails.configuration.teaching_material_location%>" on the server.
+    </p>
+    <p> if any question, ask to robin.choquet@ulb.be
+    </p>
+    <p>Note for the ADMIN :
+    change the path var in "config/production.rb or development.rb"</p>
+
+  </div>
+</div>
+
+
+</body>
+</html>

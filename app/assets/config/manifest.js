@@ -25,3 +25,12 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
+
+function openRequests(requestStatus) {
+    var i;
+    var x = document.getElementsByClassName("requests");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(requestStatus).style.display = "block";
+}

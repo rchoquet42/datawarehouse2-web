@@ -33,3 +33,12 @@ Role.create(:id => 2,
 Users_role.create(:user_id => 1,
                   :role_id => 1)
 
+####### CHAPTERS #############
+Chapters.create(:number => 1,
+                :name => "Introduction",
+                :slides_path => "slides/chap1.pdf",
+                :figpdf_path => "figpdf/chap1.pdf",
+                :figEpdf_path => "figEpdf/chap1.pdf",
+                :answers_path => "answers/chap1.pdf",
+                :samples_path => "samples/chap1.pdf")
+

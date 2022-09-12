@@ -91,16 +91,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              Rails.application.credentials.smtp_settings[:address],
     port:                 587,
-    domain:               'example.com',
-    user_name:            '<username>',
-    password:             '<password>',
+    domain:               Rails.application.credentials.smtp_settings[:domain],
+    user_name:            Rails.application.credentials.smtp_settings[:user_name],
+    password:             Rails.application.credentials.smtp_settings[:password],
     authentication:       'plain',
     enable_starttls_auto: true,
-    open_timeout:         5,
-    read_timeout:         5 }
+    open_timeout:         30,
+    read_timeout:         30 }
+
+  config.teaching_material_location  = "/home/rchoquet/"
 
 end

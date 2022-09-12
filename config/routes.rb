@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   post "teaching_requests", to: "teaching_requests#edit"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  get 'chapters/:type/:id', to: "chapters#get"
+  get 'chapters/', to: "chapters#index"
+
+  get 'reviews', to: "reviews#index"
   # Defines the root path route ("/")
    root "about#index"
 end

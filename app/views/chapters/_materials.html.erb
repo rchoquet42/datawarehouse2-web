@@ -1,0 +1,92 @@
+<div class="w3-bar">
+    <button id="title-slides" class="chaptitle w3-mobile w3-bar-item w3-button w3-indigo w3-margin-right" onclick=" openTeaching('slides')">Lecture Slides</button>
+    <button id="title-figpdf" class="chaptitle w3-mobile w3-bar-item w3-button w3-indigo w3-margin-right" onclick=" openTeaching('figpdf')">Figures in PDF</button>
+    <button id="title-figEpdf" class="chaptitle w3-mobile w3-bar-item w3-button w3-indigo w3-margin-right" onclick=" openTeaching('figEpdf')">Figures in Encapsulated PDF</button>
+    <button id="title-figpng" class="chaptitle w3-mobile w3-bar-item w3-button w3-indigo w3-margin-right" onclick=" openTeaching('figpng')">Figures in PNG</button>
+    <button id="title-answers" class="chaptitle w3-mobile w3-bar-item w3-button w3-indigo w3-margin-right" onclick=" openTeaching('answers')">Answers to Exercises</button>
+    <button id="title-samples" class="chaptitle w3-mobile w3-bar-item w3-button w3-grey w3-margin-right" onclick=" openTeaching('samples')">Sample Databases</button>
+</div>
+
+
+<div id="slides" class="w3-container materials w3-light-gray " style="display:block">
+  <h2>Lecture Slides</h2>
+  <ul>
+    <% @slides.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/lecture_slides/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+<div id="figpdf" class="w3-container materials w3-light-gray " style="display:none">
+  <h2>Figures in PDF</h2>
+  <ul>
+    <% @figpdf.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/figures_pdf/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+<div id="figEpdf" class="w3-container materials w3-light-gray " style="display:none">
+  <h2>Figures in Encapsulated PDF</h2>
+  <ul>
+    <% @figEpdf.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/figures_encapsulated/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="figpng" class="w3-container materials w3-light-gray " style="display:none">
+  <h2>Figures in PNG</h2>
+  <ul>
+    <% @figpng.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/figures_png/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+<div id="answers" class="w3-container materials w3-light-gray " style="display:none">
+  <h2>Answers to Exercises</h2>
+  <ul>
+    <% @answers.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/answers_exercises/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+<div id="samples" class="w3-container materials w3-light-gray " style="display:none">
+  <h2>Sample Databases</h2>
+  <ul>
+    <% @samples.each do |chap| %>
+      <li><%= link_to  "#{chap}", "/chapters/sample_databases/#{chap}" %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function openTeaching(teach) {
+        var i;
+        var x = document.getElementsByClassName("materials");
+        var y = document.getElementsByClassName("chaptitle");
+
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        for (i = 0; i < y.length; i++) {
+            y[i].classList.remove('w3-light-gray');
+            y[i].classList.add('w3-indigo');
+        }
+        const title = "title-" + teach
+        document.getElementById(teach).style.display = "block";
+        document.getElementById(title).classList.remove('w3-indigo');
+        document.getElementById(title).classList.add('w3-light-gray');
+    }
+</script>

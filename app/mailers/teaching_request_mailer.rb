@@ -13,5 +13,18 @@ class TeachingRequestMailer < ApplicationMailer
     mail to: @user.email, subject: "Confirmation of request to access teaching material"
   end
 
+  def accepted(teachingreq, user)
+    @teachingreq = teachingreq
+    @user = user
+
+    mail to: @user.email, subject: "Request to access teaching material"
+  end
+
+  def rejected(teachingreq, user)
+    @teachingreq = teachingreq
+    @user = user
+
+    mail to: @user.email, subject: "Request to access teaching material"
+  end
 
 end
