@@ -1,4 +1,4 @@
-module Role
+module Roles
   extend ActiveSupport::Concern
 
   ADMIN = 1

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   include Authentication #dans 'concern'
-  include Role #Dans 'concern'
+  include Roles #Dans 'concern'
 
 end
