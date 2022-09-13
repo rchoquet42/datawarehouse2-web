@@ -15,23 +15,35 @@ User.create!(:id => 1,
             :lastname => "root",
             :email => "root@cs.ulb.ac.be",
             :confirmed_at => "1656086785000",
-            :password_digest => "toto")
+            :password_digest => "test")
 
+User.create!(:id => 2,
+             :firstname => "Esteban",
+             :lastname => "Zimányi",
+             :email => "esteban.zimanyi@ulb.be",
+             :confirmed_at => "1656086785000",
+             :password_digest => "test")
 
+User.create!(:id => 3,
+             :firstname => "Alejandro",
+             :lastname => "Vaisman",
+             :email => "avaisman@ulb.ac.be",
+             :confirmed_at => "1656086785000",
+             :password_digest => "test")
 
 
 
 ####### AUTHOR #############
 puts "Seeding AUTHORS "
-Author.create!(:user_id => 1,
-              :about => "famous sysadmin, Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.",
+Author.create!(:user_id => 2,
+              :about => "Esteban Zimányi is a full professor and the director of the Department of Computer & Decision Engineering (CoDE) at ULB. He started his studies at the Universidad Autónoma de Centro América, Costa Rica. He received a B.Sc. (1988) and a doctorate (1992) in computer science from the Faculty of Sciences at the ULB. During 1997, he was a visiting researcher at the Database Laboratory of the Ecole Polytechnique Fédérale de Lausanne, Switzerland. He co-authored and co-edited 16 books, 18 book chapters, 19 articles in international journals, and 82 papers in international conferences. He is coordinator of the BDMA and IT4BI-DC Erasmus Mundus programmes. He is Editor-in-Chief of the Journal on Data Semantics published by Springer. His current research interests include data warehouses, spatio-temporal databases, geographic information systems, and semantic web.",
               :contact => "linkedin, email, etc",
-              :picture_path => "profile_pictures/zip.jpg")
+              :picture_path => "profile_pictures/esteban_zimanyi.jpg")
 
-Author.create!(:user_id => 1,
-               :about => "famous sysadmin, Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.",
+Author.create!(:user_id => 3,
+               :about => "I was born in Buenos Aires, Argentina. I received a BA degree in Civil Engineering from the University of Buenos Aires (UBA), and a BA in Computer Science from the same university. I worked as a civil engineer in environmental projects from 1984 to 1994. In 2001 I got my PhD in Computer Science from the University of Buenos Aires. My PhD thesis studied updates and time management in OLAP. I have been teaching at the Computer Science Department at UBA, from 1987. I have been an invited professor at the Universidad Politécnica de Madrid in 1997. In 1998 I joined the Systems Division at the Universidad de Belgrano, Buenos Aires (with a DBA position), where in 2001 I was appointed vice-dean of the School of Engineering and Information Technology. In 2003 I joined the University of Toronto as a postdoctoral fellow, and lecturing the Data Management Systems course. After that, I returned to the University of Buenos Aires, lecturing the courses on Fundamentals of Data Warehousing and Database Systems, and as Vice-Head of the Department of Computer Science. During 2006 I was visiting researcher at the Computer Science Department of the University of Chile. During 2008-2009 I was visiting researcher at the University of Hasselt, working for the GeoPKDD project. I Chaired the Masters Program in Data Mining at the University of Buenos Aires, Facultad de Ciencias Exactas y Naturales from March 2005 to March 2010. In 2010 I was appointed Associate Professor at the Universidad de la República, Uruguay, at the Institute of Computing.",
                :contact => "linkedin, email, etc",
-               :picture_path => "profile_pictures/zip.jpg")
+               :picture_path => "profile_pictures/alejandro.png")
 
 
 
