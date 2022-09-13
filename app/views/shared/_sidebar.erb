@@ -1,16 +1,24 @@
-<% if admin_user? %>
+
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
     <i class="fa fa-remove"></i>
   </a>
 
+  <a href="/about" class="w3-bar-item w3-button w3-hover-black" href="/users">About</a>
+  <a href="/authors" class="w3-bar-item w3-button w3-hover-black" href="/teaching_requests">Authors</a>
+  <a href="/teaching" class="w3-bar-item w3-button w3-hover-black" href="/chapters">Teaching Material</a>
+  <a href="/reviews" class="w3-bar-item w3-button w3-hover-black" href="/chapters">Reviews</a>
+  <a href="https://link.springer.com/book/10.1007/978-3-662-65167-4" target=_blank class="w3-bar-item w3-button w3-hover-black" href="/chapters">Buy</a>
+
+
+  <% if admin_user? %>
 
   <br>
   <h4 class="w3-bar-item"><b>Admin</b></h4>
     <a class="w3-bar-item w3-button w3-hover-black" href="/users">Users</a>
     <a class="w3-bar-item w3-button w3-hover-black" href="/teaching_requests">Requests</a>
     <a class="w3-bar-item w3-button w3-hover-black" href="/chapters">Materials</a>
-
+  <% end %>
 
 
 </nav>
@@ -18,4 +26,3 @@
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<% end %>
