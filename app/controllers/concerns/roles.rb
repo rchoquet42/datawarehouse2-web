@@ -26,5 +26,13 @@ module Roles
     return false
   end
 
-
+  def admin_user_id?(id)
+    user_role = UsersRole.find_by user_id: id
+    unless user_role.nil?
+      if user_role.role_id == ADMIN
+        return true
+      end
+    end
+    return false
+  end
 end

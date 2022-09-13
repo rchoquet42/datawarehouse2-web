@@ -1,11 +1,11 @@
 .picture_profile_left {
-    width: 100px;
+    width: 150px;
     float: left;
     margin: 15px;
 }
 
 .picture_profile_right {
-    width: 100px;
+    width: 150px;
     float: right;
     margin: 15px;
 }

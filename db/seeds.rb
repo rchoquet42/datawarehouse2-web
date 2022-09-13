@@ -15,21 +15,21 @@ User.create!(:id => 1,
             :lastname => "root",
             :email => "root@cs.ulb.ac.be",
             :confirmed_at => "1656086785000",
-            :password_digest => "test")
+            :password_digest => "3DArflWedbvw7LZjQau1b1XBLh0LrHfEgdx5Tp1hAfKl6SfjjW")
 
 User.create!(:id => 2,
              :firstname => "Esteban",
              :lastname => "Zimányi",
              :email => "esteban.zimanyi@ulb.be",
              :confirmed_at => "1656086785000",
-             :password_digest => "test")
+             :password_digest => "3DArflWedbvw7LZjQau1b1XBLh0LrHfEgdx5Tp1hAfKl6SfjjW")
 
 User.create!(:id => 3,
              :firstname => "Alejandro",
              :lastname => "Vaisman",
              :email => "avaisman@ulb.ac.be",
              :confirmed_at => "1656086785000",
-             :password_digest => "test")
+             :password_digest => "3DArflWedbvw7LZjQau1b1XBLh0LrHfEgdx5Tp1hAfKl6SfjjW")
 
 
 
