@@ -83,7 +83,7 @@ Rails.application.configure do
     open_timeout:         30,
     read_timeout:         30 }
 
-  #config.teaching_material_location  = "/home/rchoquet/teaching_materials/"
-  config.teaching_material_location  = "/home/robin/teaching_materials/"
+  config.teaching_material_location  = "/home/rchoquet/teaching_materials/"
+  #config.teaching_material_location  = "/home/robin/teaching_materials/"
 
 end

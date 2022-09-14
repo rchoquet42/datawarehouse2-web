@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_131018) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_14_153331) do
   create_table "authors", force: :cascade do |t|
     t.integer "user_id"
     t.text "about"
@@ -19,6 +19,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_131018) do
     t.datetime "updated_at", null: false
     t.string "picture_path"
     t.index ["user_id"], name: "index_authors_on_user_id"
+  end
+
+  create_table "departments", force: :cascade do |t|
+    t.string "institution"
+    t.string "department"
+    t.string "head"
+    t.string "head_email"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "job"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -45,6 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_131018) do
     t.datetime "updated_at", null: false
     t.boolean "validated?", default: false
     t.boolean "waiting?", default: true
+    t.integer "department_id"
+    t.index ["department_id"], name: "index_teaching_requests_on_department_id"
     t.index ["user_id"], name: "index_teaching_requests_on_user_id"
   end
 

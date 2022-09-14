@@ -34,6 +34,7 @@
                   <th>Last Name</th>
                   <th>Email</th>
                   <th>Job</th>
+                  <th>department</th>
                   <th>Why</th>
                   <th>Created at</th>
                   <th>Action</th>
@@ -46,6 +47,7 @@
                     <td><%= req.user.lastname %></td>
                     <td><%= req.user.email %></td>
                     <td><%= req.job %></td>
+                    <td><%= render "department/index" , locals: {id: req.department_id} %></td>
                     <td><%= req.why %></td>
                     <td><%= req.created_at %>
                     <td><%= button_to image_tag("logos/correct.png", :class => "correct_logo"),

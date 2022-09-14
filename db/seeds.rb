@@ -75,6 +75,10 @@ Review.create!(:id => 2,
                :reviewer_details => "Excerpt of the foreword for the first edition by Professor Torben Bach Pedersen Co-director of the Center for Data-Intensive Systems (Daisy) Aalborg Universiteit Denmark")
 
 
+##### JOBS ############
+
+Job.create!(:job => "needToPopulateThisDB")
+
 
 
 puts "Seeding done."
