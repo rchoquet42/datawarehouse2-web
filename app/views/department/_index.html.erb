@@ -1,4 +1,6 @@
-<% dep = locals[:id] %>
-<% dep = locals[:id] %>
-
-<h1>HELLO </h1>
+<% dep = Department.find_by id: locals[:id]  %>
+<div><%= dep.institution %>, <%= dep.city %>
+<%= dep.department%><br>
+<%= dep.head %><br>
+<%= dep.head_email %>
+</div>

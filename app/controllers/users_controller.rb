@@ -54,8 +54,12 @@ class UsersController < ApplicationController
 
   def delete #call by admin
     user = User.find_by id: params[:id]
+    tr = TeachingRequest.find_by_user_id user.id
+
     user.destroy
-    redirect_to action: :index, notice: "Account has been deleted"
+    tr.destroy
+
+    redirect_to action: :index, alert: "Account has been deleted"
   end
 
   def destroy #call by user to self delete their account

@@ -1,4 +1,4 @@
 class Department < ApplicationRecord
-  belongs_to :teaching_request
+  has_one :teaching_request
 end
 

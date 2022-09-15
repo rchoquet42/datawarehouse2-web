@@ -1,39 +1,39 @@
 <%= form_with method: :put, url: "/teaching_request"  do |form| %>
+<table>
+  <tr>
+    <td><%= form.label :institution, "What's your institution ? " %></td>
+    <td><%= form.text_field :institution, required: true, :value => "University of ..." %></td>
 
-  <div>
-    <%= form.label :institution, "What's your institution ? " %>
-    <%= form.text_field :institution, required: true, :value => "University of ..." %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :institution, "City ? " %>
-    <%= form.text_field :institution, required: true %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :department, "What's your department ? " %>
-    <%= form.text_field :department, required: true %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :head, "Department Head ? " %>
-    <%= form.text_field :head, required: true %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :head_email, "Department Head e-mail address ? " %>
-    <%= form.text_field :head_email, required: true %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :job, "What's your position ? " %>
-    <%= form.collection_select :job, Job.all, :job, :job  %>
-    <br>
-  </div>
-  <div>
-    <%= form.label :why, "Why do you want to access the Datawarehouse2 teaching material ? " %>
-    <br>
-    <%= form.text_area :why, required: true %>
-  </div>
+  </tr>
+  <tr>
+    <td><%= form.label :city, "City ? " %></td>
+    <td><%= form.text_field :city, required: true %></td>
+
+  </tr>
+  <tr>
+    <td><%= form.label :department, "What's your department ? " %></td>
+    <td><%= form.text_field :department, required: true %></td>
+
+  </tr>
+  <tr>
+    <td><%= form.label :head, "Department Head ? " %></td>
+    <td><%= form.text_field :head, required: true %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :head_email, "Department Head e-mail address ? " %></td>
+    <td><%= form.text_field :head_email, required: true %></td>
+
+  </tr>
+  <tr>
+    <td><%= form.label :job, "What's your position ? " %></td>
+    <td><%= form.collection_select :job, Job.all, :job, :job  %></td>
+
+  </tr>
+  <tr>
+    <td><%= form.label :why, "Why do you want to access the Datawarehouse2 teaching material ? " %></td>
+
+    <td><%= form.text_area :why, required: true %></td>
+  </tr>
+</table>
   <%= form.submit "Request access" %>
 <% end %>

@@ -3,14 +3,14 @@ class TeachingRequestsController < ApplicationController
   before_action :admin_user!, only: [:edit, :index]
 
   def create
-    puts "creating request"
-    departement = Department.new(dep_request_params)
-    @request = TeachingRequest.new(request_params)
 
+    @request = TeachingRequest.new(request_params)
     @request.user_id = current_user.id
-    @request.departement_id = departement.id
     if @request.save
-      departement.save
+      department = Department.new(dep_request_params)
+      department.save
+      @request.department_id = department.id
+      @request.save
       @request.send_confirmation_email!
       #request.send_notification_email! # TODO sent notification to moderators
       redirect_to url: "/teaching_material", alert: "Thank you, your request is being process"
