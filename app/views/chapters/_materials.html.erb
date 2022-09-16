@@ -10,6 +10,7 @@
 
 <div id="slides" class="w3-container materials w3-light-gray " style="display:block">
   <h2>Lecture Slides</h2>
+  <%= button_to( "Download all", "/chapters/download/lecture_slides", data: { turbo: false }) %>
   <ul>
     <% @slides.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/lecture_slides/#{chap}" %></li>
@@ -18,6 +19,7 @@
 </div>
 <div id="figpdf" class="w3-container materials w3-light-gray " style="display:none">
   <h2>Figures in PDF</h2>
+  <%= button_to( "Download all", "/chapters/download/figures_pdf", data: { turbo: false }) %>
   <ul>
     <% @figpdf.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/figures_pdf/#{chap}" %></li>
@@ -26,6 +28,7 @@
 </div>
 <div id="figEpdf" class="w3-container materials w3-light-gray " style="display:none">
   <h2>Figures in Encapsulated PDF</h2>
+  <%= button_to( "Download all", "/chapters/download/figures_encapsulated", data: { turbo: false }) %>
   <ul>
     <% @figEpdf.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/figures_encapsulated/#{chap}" %></li>
@@ -35,6 +38,7 @@
 
 <div id="figpng" class="w3-container materials w3-light-gray " style="display:none">
   <h2>Figures in PNG</h2>
+  <%= button_to( "Download all", "/chapters/download/figures_png", data: { turbo: false }) %>
   <ul>
     <% @figpng.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/figures_png/#{chap}" %></li>
@@ -43,9 +47,9 @@
 </div>
 
 
-
 <div id="answers" class="w3-container materials w3-light-gray " style="display:none">
   <h2>Answers to Exercises</h2>
+  <%= button_to( "Download all", "/chapters/download/answers_exercises", data: { turbo: false }) %>
   <ul>
     <% @answers.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/answers_exercises/#{chap}" %></li>
@@ -54,20 +58,13 @@
 </div>
 <div id="samples" class="w3-container materials w3-light-gray " style="display:none">
   <h2>Sample Databases</h2>
+  <%= button_to( "Download all", "/chapters/download/sample_databases", data: { turbo: false }) %>
   <ul>
     <% @samples.each do |chap| %>
       <li><%= link_to  "#{chap}", "/chapters/sample_databases/#{chap}" %></li>
     <% end %>
   </ul>
 </div>
-
-
-
-
-
-
-
-
 
 
 

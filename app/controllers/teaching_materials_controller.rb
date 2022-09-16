@@ -5,12 +5,12 @@ class TeachingMaterialsController < ApplicationController
 
   def index
     #voir config/developement.rb pour la var rails.config
-    @slides = Dir.entries("#{Rails.configuration.teaching_material_location}/lecture_slides/").reject! {|n| n[0] == '.'}
-    @figpdf = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_pdf/").reject! {|n| n[0] == '.'}
-    @figEpdf = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_encapsulated/").reject! {|n| n[0] == '.'}
-    @figpng = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_png/").reject! {|n| n[0] == '.'}
-    @answers = Dir.entries("#{Rails.configuration.teaching_material_location}/answers_exercises/").reject! {|n| n[0] == '.'}
-    @samples = Dir.entries("#{Rails.configuration.teaching_material_location}/sample_databases/").reject! {|n| n[0] == '.'}
+    @slides = Dir.entries("#{Rails.configuration.teaching_material_location}/lecture_slides/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
+    @figpdf = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_pdf/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
+    @figEpdf = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_encapsulated/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
+    @figpng = Dir.entries("#{Rails.configuration.teaching_material_location}/figures_png/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
+    @answers = Dir.entries("#{Rails.configuration.teaching_material_location}/answers_exercises/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
+    @samples = Dir.entries("#{Rails.configuration.teaching_material_location}/sample_databases/").reject! {|n| n[0] == '.'}.sort_by! { |file| naturalized(file) }
 
   end
 
@@ -43,5 +43,14 @@ class TeachingMaterialsController < ApplicationController
     end
     false
   end
+
+
+  private
+  #POur trier les fichiers des teaching materials
+  def naturalized(file)
+    file.scan(/[^\d\.]+|[\d\.]+/).collect { |f| f.match(/\d+(\.\d+)?/) ? f.to_f : f }
+  end
+
+
 
 end
