@@ -92,7 +92,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  #Allow hosts
+  config.hosts << "datawarehouse2.wit.ulb.ac.be"
+
+
+  config.action_mailer.default_url_options = { host: "datawarehouse2.wit.ulb.ac.be" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              Rails.application.credentials.smtp_settings[:address],
@@ -105,6 +109,7 @@ Rails.application.configure do
     open_timeout:         30,
     read_timeout:         30 }
 
-  config.teaching_material_location  = "/home/rchoquet/"
+  config.teaching_material_location  = "/srv/teaching_materials/"
+
 
 end
