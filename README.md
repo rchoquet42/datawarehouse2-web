@@ -46,9 +46,16 @@ $ vim datawarehouse2/config/environments/production.rb
 
 ```
 
+* If necessary, change the environnement in puma.rb
+```
+  environment ENV.fetch("RAILS_ENV") { "production" }
+```
+
 * Create the Database
 ```
-$ TODO PSQL 
+$ su postgres
+$ psql postgres
+$ CREATE DATABASE datawarehouse2
 
 ```
 
